@@ -94,6 +94,7 @@ STATIC_TEMPLATE = """<!doctype html>
 <title>{title}</title><meta name="description" content="{description}"><link rel="canonical" href="{canonical}">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27 fill=%27none%27%3E%3Crect x=%271.5%27 y=%271.5%27 width=%2737%27 height=%2737%27 rx=%2710%27 fill=%27%230b1120%27 stroke=%27%2338bdf8%27 stroke-width=%271.5%27/%3E%3Cpath d=%27M10.5 14l6.5 6-6.5 6%27 stroke=%27%2338bdf8%27 stroke-width=%272.6%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M20.5 15h9m0 0l-3.2-3.2M29.5 15l-3.2 3.2%27 stroke=%27%2334d399%27 stroke-width=%272.4%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M20 26.5h9.5%27 stroke=%27%2334d399%27 stroke-width=%272.6%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<meta name="google-adsense-account" content="ca-pub-6898176272342462">
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6898176272342462" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="/static/style.css?v=20"></head>
 <body><div class="page"><header class="topbar"><a class="brand" href="/">{logo}<span>ze<b>Convert</b></span></a></header>
