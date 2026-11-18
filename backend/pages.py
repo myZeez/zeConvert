@@ -1,0 +1,132 @@
+import html
+import os
+
+from .config import FRONTEND_DIR
+
+SITE_URL = os.getenv("SITE_URL", "https://zeconvert.cloud").rstrip("/")
+
+HOME_DEFAULT = {
+    "title": "zeConvert — Ubah Video jadi Musik MP3",
+    "description": "Ubah video jadi musik MP3 atau MP4 secara gratis, cepat, dan privat.",
+    "h1": "Ubah video jadi musik",
+    "sub": "Konversi video ke MP3 atau MP4 dengan cepat. Unggah file atau tempel link file media, pilih format, lalu proses.",
+    "extra": "",
+}
+
+# Halaman landing yang memakai konverter yang sama, dengan judul dan penjelasan sendiri (SEO).
+HOME_PAGES = {
+    "": HOME_DEFAULT,
+    "mp4-ke-mp3": {
+        "title": "Convert MP4 ke MP3 Online Gratis — zeConvert",
+        "description": "Ubah file MP4 ke MP3 online gratis tanpa daftar. Pilih bitrate 128–320 kbps, hasil cepat dan privat.",
+        "h1": "Convert MP4 ke MP3",
+        "sub": "Ambil audio dari video MP4 dan simpan sebagai MP3 berkualitas tinggi. Unggah file, pilih bitrate, lalu proses.",
+        "extra": """<h2>Cara mengubah MP4 ke MP3</h2>
+<ol><li>Unggah file MP4 lewat bagian <em>Punya file sendiri?</em>, atau tempel link langsung ke file MP4.</li><li>Pilih format <strong>Audio MP3</strong> dan bitrate yang kamu mau.</li><li>Tekan tombol konversi, tunggu sampai selesai, lalu download hasilnya.</li></ol>
+<h2>Bitrate mana yang sebaiknya dipilih?</h2>
+<p>Bitrate menentukan kualitas dan ukuran file MP3. <strong>128 kbps</strong> cukup untuk suara seperti podcast atau ceramah. <strong>192 kbps</strong> seimbang untuk musik sehari-hari. <strong>256–320 kbps</strong> memberi kualitas terbaik untuk musik, dengan ukuran file lebih besar.</p>
+<h2>Kenapa memakai zeConvert?</h2>
+<p>Layanan ini gratis, tanpa daftar akun, dan memproses file langsung di server kami lalu menghapusnya otomatis. Hasil konversi hanya bisa diunduh oleh kamu sendiri dan tidak muncul di riwayat publik mana pun.</p>""",
+    },
+    "video-ke-musik": {
+        "title": "Ubah Video jadi Musik MP3 Online — zeConvert",
+        "description": "Ubah video jadi musik atau audio MP3 dengan mudah. Gratis, cepat, tanpa daftar, dan privat.",
+        "h1": "Ubah video jadi musik",
+        "sub": "Pisahkan suara dari video dan simpan sebagai file musik MP3. Cocok untuk video milikmu sendiri.",
+        "extra": """<h2>Kapan konversi video ke musik berguna?</h2>
+<ul><li>Menyimpan rekaman konser, acara, atau kelas yang kamu rekam sendiri sebagai audio.</li><li>Mengambil suara dari video wawancara atau rapat agar mudah didengar di perjalanan.</li><li>Membuat file audio yang lebih kecil untuk dibagikan ke teman atau dipakai di editor.</li></ul>
+<h2>Format yang didukung</h2>
+<p>zeConvert menerima format video dan audio yang umum seperti MP4, MKV, MOV, WebM, AVI, MP3, M4A, dan WAV, dengan ukuran file hingga 2 GB. Hasilnya dalam format MP3 atau MP4.</p>
+<h2>Privasi</h2>
+<p>File yang kamu unggah dihapus otomatis dari server, dan hanya sesi browsermu yang bisa mengunduh hasilnya.</p>""",
+    },
+}
+
+STATIC_PAGES = {
+    "tentang": ("Tentang zeConvert", "Tentang zeConvert, konverter video ke musik yang gratis dan privat.", """
+<h1>Tentang zeConvert</h1>
+<p>zeConvert adalah alat online untuk mengubah video menjadi musik (MP3) atau menyimpannya ulang sebagai MP4. Tujuannya sederhana: konversi yang cepat, tanpa daftar akun, dan tanpa riwayat publik.</p>
+<h2>Prinsip kami</h2>
+<ul><li><strong>Gratis dan sederhana.</strong> Tidak perlu akun.</li><li><strong>Privat.</strong> Hasil konversi hanya bisa diunduh oleh sesi browser yang membuatnya.</li><li><strong>Bersih.</strong> File sementara dihapus otomatis dari server.</li><li><strong>Bertanggung jawab.</strong> Gunakan hanya untuk file yang kamu miliki atau yang boleh kamu simpan.</li></ul>
+<h2>Didukung iklan</h2>
+<p>Layanan ini dibiayai oleh iklan yang ditampilkan Google AdSense, sehingga tetap gratis bagi pengguna.</p>"""),
+    "kebijakan-privasi": ("Kebijakan Privasi — zeConvert", "Kebijakan privasi zeConvert: data apa yang diproses, cookie, iklan, dan penghapusan file.", """
+<h1>Kebijakan Privasi</h1>
+<p>Terakhir diperbarui: 1 November 2026. Kebijakan ini menjelaskan bagaimana zeConvert (zeconvert.cloud) menangani data saat kamu memakai layanan ini.</p>
+<h2>Data yang kami proses</h2>
+<ul><li><strong>File yang kamu unggah atau link yang kamu masukkan</strong> diproses di server hanya untuk membuat hasil konversi. File sumber dan hasil dihapus otomatis, paling lama sekitar satu jam setelah pekerjaan dibuat.</li><li><strong>Alamat IP</strong> dipakai sementara untuk membatasi penyalahgunaan (pembatasan jumlah permintaan) dan tercatat di log server standar.</li><li>Kami tidak meminta nama, email, atau kata sandi, dan tidak membuat akun pengguna.</li></ul>
+<h2>Cookie</h2>
+<ul><li><strong>Cookie fungsional <code>zc_owner</code></strong>: pengenal acak yang berlaku sekitar 24 jam, supaya hanya browsermu yang bisa melihat dan mengunduh hasil konversimu. Cookie ini tidak dipakai untuk pelacakan.</li><li><strong>Cookie iklan</strong> dari Google dan mitranya (lihat di bawah).</li></ul>
+<h2>Iklan Google AdSense</h2>
+<p>Kami memakai Google AdSense untuk menampilkan iklan. Google dan mitra iklannya dapat memakai cookie untuk menayangkan iklan berdasarkan kunjunganmu ke situs ini dan situs lain. Kamu dapat mengelola atau menonaktifkan personalisasi iklan lewat <a href="https://adssettings.google.com" rel="noopener">Pengaturan Iklan Google</a> dan mempelajari cara Google memakai data di <a href="https://policies.google.com/technologies/partner-sites" rel="noopener">policies.google.com/technologies/partner-sites</a>.</p>
+<h2>Berbagi data</h2>
+<p>Kami tidak menjual data pribadi. File yang kamu proses tidak dibagikan ke pihak ketiga. Pihak ketiga yang berinteraksi dengan browsermu hanyalah penyedia iklan (Google) dan font (Google Fonts).</p>
+<h2>Hak dan pertanyaan</h2>
+<p>Karena kami tidak menyimpan data pribadi jangka panjang, tidak ada akun yang perlu dihapus. Kamu dapat menghapus cookie browsermu kapan saja. Kebijakan ini bisa diperbarui, dan tanggal perubahan akan tertera di atas.</p>"""),
+    "syarat-layanan": ("Syarat Layanan — zeConvert", "Syarat dan ketentuan penggunaan layanan zeConvert.", """
+<h1>Syarat Layanan</h1>
+<p>Terakhir diperbarui: 1 November 2026. Dengan memakai zeConvert, kamu setuju dengan syarat berikut.</p>
+<h2>Penggunaan yang diizinkan</h2>
+<ul><li>Gunakan layanan hanya untuk file yang kamu miliki atau yang kamu punya izin untuk disimpan dan diubah.</li><li>Kamu bertanggung jawab penuh atas konten yang kamu proses dan atas kepatuhannya terhadap hukum hak cipta yang berlaku.</li></ul>
+<h2>Yang dilarang</h2>
+<ul><li>Memproses konten ilegal atau yang melanggar hak pihak lain.</li><li>Mengganggu layanan, misalnya dengan permintaan otomatis berlebihan atau mencoba menembus pembatasan keamanan.</li></ul>
+<h2>Batas layanan</h2>
+<p>Ada batas ukuran file (hingga 2 GB), durasi, dan jumlah permintaan per menit. Hasil konversi disimpan sementara dan dihapus otomatis, jadi segera unduh hasilmu.</p>
+<h2>Tanpa jaminan</h2>
+<p>Layanan disediakan apa adanya tanpa jaminan ketersediaan atau hasil tertentu. Kami tidak bertanggung jawab atas kerugian yang timbul dari penggunaan layanan. Kami dapat mengubah atau menghentikan layanan sewaktu-waktu.</p>
+<h2>Privasi</h2>
+<p>Penanganan data dijelaskan di <a href="/kebijakan-privasi">Kebijakan Privasi</a>.</p>"""),
+}
+
+FOOTER_NAV = ('<nav class="foot-nav"><a href="/tentang">Tentang</a><a href="/kebijakan-privasi">Kebijakan Privasi</a>'
+              '<a href="/syarat-layanan">Syarat Layanan</a><a href="/mp4-ke-mp3">MP4 ke MP3</a><a href="/video-ke-musik">Video ke Musik</a></nav>')
+
+LOGO = ('<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">'
+        '<defs><linearGradient id="zc-grad" x1="6" y1="6" x2="34" y2="34" gradientUnits="userSpaceOnUse">'
+        '<stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#34d399"/></linearGradient></defs>'
+        '<rect x="1.5" y="1.5" width="37" height="37" rx="10" fill="#0b1120" stroke="rgba(148,163,184,0.28)" stroke-width="1.5"/>'
+        '<path d="M10.5 14l6.5 6-6.5 6" stroke="url(#zc-grad)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>'
+        '<path d="M20.5 15h9m0 0l-3.2-3.2M29.5 15l-3.2 3.2" stroke="url(#zc-grad)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'
+        '<path d="M20 26.5h9.5" stroke="#34d399" stroke-width="2.6" stroke-linecap="round" opacity="0.85"/></svg>')
+
+STATIC_TEMPLATE = """<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="color-scheme" content="dark"><meta name="theme-color" content="#070b14">
+<title>{title}</title><meta name="description" content="{description}"><link rel="canonical" href="{canonical}">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27 fill=%27none%27%3E%3Crect x=%271.5%27 y=%271.5%27 width=%2737%27 height=%2737%27 rx=%2710%27 fill=%27%230b1120%27 stroke=%27%2338bdf8%27 stroke-width=%271.5%27/%3E%3Cpath d=%27M10.5 14l6.5 6-6.5 6%27 stroke=%27%2338bdf8%27 stroke-width=%272.6%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M20.5 15h9m0 0l-3.2-3.2M29.5 15l-3.2 3.2%27 stroke=%27%2334d399%27 stroke-width=%272.4%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M20 26.5h9.5%27 stroke=%27%2334d399%27 stroke-width=%272.6%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6898176272342462" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="/static/style.css?v=20"></head>
+<body><div class="page"><header class="topbar"><a class="brand" href="/">{logo}<span>ze<b>Convert</b></span></a></header>
+<main class="card prose">{body}</main><footer>{nav}<p>Gunakan hanya untuk konten yang kamu miliki atau boleh kamu simpan.</p></footer></div></body></html>"""
+
+
+def render_home(slug: str) -> str | None:
+    meta = HOME_PAGES.get(slug)
+    if meta is None:
+        return None
+    text = (FRONTEND_DIR / "index.html").read_text(encoding="utf-8")
+    canonical = f"{SITE_URL}/{slug}" if slug else f"{SITE_URL}/"
+    values = {"TITLE": html.escape(meta["title"]), "DESC": html.escape(meta["description"], quote=True), "CANON": canonical,
+              "H1": html.escape(meta["h1"]), "SUB": html.escape(meta["sub"]), "EXTRA": meta["extra"], "NAV": FOOTER_NAV}
+    for key, value in values.items():
+        text = text.replace("{{" + key + "}}", value)
+    return text
+
+
+def render_static(slug: str) -> str | None:
+    page = STATIC_PAGES.get(slug)
+    if page is None:
+        return None
+    title, description, body = page
+    return STATIC_TEMPLATE.format(title=html.escape(title), description=html.escape(description, quote=True), canonical=f"{SITE_URL}/{slug}",
+                                  logo=LOGO, body=body, nav=FOOTER_NAV)
+
+
+def sitemap() -> str:
+    slugs = [slug for slug in HOME_PAGES] + list(STATIC_PAGES)
+    urls = "".join(f"<url><loc>{SITE_URL}/{slug}</loc></url>" for slug in slugs)
+    return f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>'
+
+
+def robots() -> str:
+    return f"User-agent: *\nDisallow: /api/\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n"

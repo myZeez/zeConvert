@@ -1,0 +1,42 @@
+services:
+  app:
+    build: .
+    restart: unless-stopped
+    environment:
+      # YouTube dimatikan secara bawaan di server publik. Ubah ke true di file .env server bila mau.
+      YT_DLP_ENABLED: ${YT_DLP_ENABLED:-true}
+      MAX_CONCURRENT_JOBS: ${MAX_CONCURRENT_JOBS:-1}
+      MAX_ACTIVE_JOBS: ${MAX_ACTIVE_JOBS:-6}
+      MAX_UPLOAD_MB: ${MAX_UPLOAD_MB:-2048}
+      MAX_REMOTE_MB: ${MAX_REMOTE_MB:-2048}
+      MAX_OUTPUT_MB: ${MAX_OUTPUT_MB:-2048}
+      MAX_MEDIA_SECONDS: ${MAX_MEDIA_SECONDS:-21600}
+      MAX_PROCESS_SECONDS: ${MAX_PROCESS_SECONDS:-5400}
+      JOB_TTL_SECONDS: ${JOB_TTL_SECONDS:-3600}
+      JOBS_PER_MINUTE: ${JOBS_PER_MINUTE:-4}
+      PARALLEL_THRESHOLD_SECONDS: ${PARALLEL_THRESHOLD_SECONDS:-1200}
+      PARALLEL_WORKERS: ${PARALLEL_WORKERS:-2}
+    volumes:
+      - media:/data
+    expose:
+      - "8001"
+    mem_limit: 1536m
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      # Isi dengan domain (mis. zeconvert.com) agar HTTPS otomatis. Kosong = HTTP lewat alamat IP.
+      SITE_ADDRESS: ${SITE_ADDRESS:-:80}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+    depends_on:
+      - app
+
+volumes:
+  media:
+  caddy_data:
