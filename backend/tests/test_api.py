@@ -448,11 +448,16 @@ def test_ads_txt_lists_the_publisher(client):
     assert "pub-6898176272342462" in response.text and response.headers["content-type"].startswith("text/plain")
 
 
-@pytest.mark.parametrize("path", ["/", "/mp4-ke-mp3", "/video-ke-musik", "/tentang", "/kebijakan-privasi", "/syarat-layanan"])
+@pytest.mark.parametrize("path", ["/", "/mp4-ke-mp3", "/video-ke-musik", "/panduan-konversi", "/panduan-bitrate-mp3", "/faq", "/tentang", "/kebijakan-privasi", "/syarat-layanan"])
 def test_content_pages_render_without_leftover_placeholders(client, path):
     response = client.get(path)
     assert response.status_code == 200
-    assert "{{" not in response.text and "pagead2.googlesyndication.com" in response.text
+    assert "{{" not in response.text
+    assert "google-adsense-account" in response.text
+    if path in {"/kebijakan-privasi", "/syarat-layanan"}:
+        assert "pagead2.googlesyndication.com" not in response.text
+    else:
+        assert "pagead2.googlesyndication.com" in response.text
     assert '<link rel="canonical"' in response.text
 
 

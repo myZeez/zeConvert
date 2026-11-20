@@ -43,13 +43,46 @@ HOME_PAGES = {
 }
 
 STATIC_PAGES = {
-    "tentang": ("Tentang zeConvert", "Tentang zeConvert, konverter video ke musik yang gratis dan privat.", """
+    "panduan-konversi": ("Panduan Lengkap Konversi Video ke MP3 & MP4 — zeConvert", "Cara mengubah video ke MP3 atau MP4 dengan hasil jernih di HP dan laptop tanpa instal aplikasi.", """
+<h1>Panduan Lengkap Konversi Video ke MP3 &amp; MP4</h1>
+<p>zeConvert membantu kamu mengubah video menjadi audio MP3 atau menyimpan ulang video sebagai MP4 langsung dari browser, baik melalui tautan media maupun unggahan file dari perangkat sendiri.</p>
+<h2>1. Memilih Sumber: Tautan vs File Lokal</h2>
+<ul><li><strong>Melalui Tautan Online:</strong> Tempel URL publik ke kotak input di <a href="/">halaman utama</a>, pilih format MP4 atau MP3, lalu tekan <strong>Proses media</strong>. File akan langsung diunduh lewat browser.</li><li><strong>Melalui File Lokal:</strong> Buka panel <em>Punya file sendiri? Unggah dan konversi</em>, lalu seret file berformat MP4, MKV, MOV, WebM, AVI, M4A, atau WAV (maksimal 2 GB, durasi hingga 6 jam).</li></ul>
+<h2>2. Kapan Sebaiknya Memilih MP3 vs MP4?</h2>
+<ul><li>Pilih <strong>Audio MP3</strong> jika kamu hanya membutuhkan suara—misalnya rekaman kelas, wawancara, ceramah, atau musik latar—agar ukuran file jauh lebih kecil dan mudah diputar di pemutar musik apa pun.</li><li>Pilih <strong>Video MP4</strong> jika kamu membutuhkan tampilan visual beserta audio dalam format yang paling kompatibel untuk Android, iPhone, Smart TV, serta aplikasi editing video.</li></ul>
+<h2>3. Tips Jika File Tidak Bersuara atau Gagal Diputar</h2>
+<p>Sebagian video dari kamera atau rekaman layar memakai codec khusus seperti HEVC atau PCM yang tidak selalu didukung di semua ponsel lawas. Dengan mengonversinya ke <strong>MP4 (Standar 720p atau HD 1080p)</strong> di zeConvert, video dan audio disesuaikan ke format standar agar lancar diputar di seluruh perangkat.</p>
+<h2>4. Etika &amp; Hak Cipta</h2>
+<p>Pastikan setiap berkas atau tautan yang diproses adalah milikmu sendiri, berada di bawah lisensi bebas, atau memiliki izin resmi dari pemegang hak cipta.</p>"""),
+    "panduan-bitrate-mp3": ("Panduan Memilih Bitrate MP3 & Resolusi Video MP4 — zeConvert", "Pahami perbedaan bitrate MP3 128, 192, 256, 320 kbps serta resolusi MP4 480p, 720p, dan 1080p.", """
+<h1>Panduan Memilih Bitrate MP3 &amp; Resolusi Video MP4</h1>
+<p>Memilih setelan kualitas yang tepat membuat hasil unduhan tetap nyaman didengar dan ditonton tanpa memboroskan ruang penyimpanan perangkat.</p>
+<h2>Memahami Bitrate Audio MP3 (kbps)</h2>
+<p><em>Bitrate</em> (kilobit per detik) menunjukkan seberapa banyak data audio yang disimpan setiap detik:</p>
+<ul><li><strong>128 kbps (~0,9 MB per menit):</strong> Cukup jernih untuk suara manusia seperti podcast, diskusi, dan rekaman materi belajar.</li><li><strong>192 kbps (~1,4 MB per menit):</strong> Titik tengah terbaik untuk musik sehari-hari dengan ukuran file yang masih ringkas.</li><li><strong>256 kbps (~1,9 MB per menit):</strong> Kejernihan tinggi untuk pengguna earphone atau headphone berkualitas baik.</li><li><strong>320 kbps (~2,4 MB per menit):</strong> Standar tertinggi format MP3, menjaga detail instrumen dan dinamika suara mendekati sumber aslinya.</li></ul>
+<h2>Memahami Resolusi Video MP4</h2>
+<ul><li><strong>480p (Hemat):</strong> Ukuran paling kecil dan cepat diunduh, cocok saat kuota internet terbatas.</li><li><strong>720p (Standar HD):</strong> Gambar sudah tajam di layar smartphone dan laptop standar.</li><li><strong>1080p (Full HD):</strong> Memberikan ketajaman terbaik untuk layar besar, presentasi, dan dokumentasi jangka panjang.</li></ul>
+<p>Siap mencoba? Kembali ke <a href="/">konverter utama zeConvert</a> atau baca <a href="/faq">FAQ lengkap</a>.</p>"""),
+    "faq": ("Pertanyaan Umum (FAQ) — zeConvert", "Jawaban atas pertanyaan umum seputar cara kerja, batas ukuran, privasi, dan format di zeConvert.", """
+<h1>Pertanyaan yang Sering Diajukan (FAQ)</h1>
+<p>Halaman ini merangkum pertanyaan yang paling sering diajukan pengguna mengenai layanan konversi video dan audio di zeConvert.</p>
+<h2>Apakah zeConvert gratis digunakan?</h2>
+<p>Ya, seluruh fitur konversi MP4 dan MP3 di zeConvert gratis dan dapat dipakai tanpa membuat akun.</p>
+<h2>Berapa batas ukuran dan durasi video?</h2>
+<p>Ukuran berkas maksimal adalah <strong>2 GB</strong> dengan batas durasi hingga <strong>6 jam</strong> per proses. Untuk media berdurasi panjang di atas 1 jam, kami menyarankan setelan Standar 720p atau MP3 192 kbps.</p>
+<h2>Apakah file saya aman dan privat?</h2>
+<p>Ya. Tidak ada galeri atau riwayat unduhan publik. Hasil konversi hanya dapat diakses oleh sesi browser yang membuatnya, dan file sementara di server dibersihkan secara otomatis.</p>
+<h2>Mengapa ukuran MP3 bisa berbeda untuk durasi yang sama?</h2>
+<p>Ukuran MP3 berbanding lurus dengan bitrate yang dipilih. Lagu berdurasi 4 menit akan berukuran sekitar 3,6 MB pada 128 kbps, sekitar 5,6 MB pada 192 kbps, dan sekitar 9,6 MB pada 320 kbps.</p>
+<h2>Browser apa saja yang didukung?</h2>
+<p>zeConvert mendukung browser modern di desktop maupun mobile, termasuk Google Chrome, Mozilla Firefox, Microsoft Edge, dan Apple Safari.</p>"""),
+    "tentang": ("Tentang zeConvert", "Tentang zeConvert, konverter video ke musik yang gratis, cepat, dan privat.", """
 <h1>Tentang zeConvert</h1>
-<p>zeConvert adalah alat online untuk mengubah video menjadi musik (MP3) atau menyimpannya ulang sebagai MP4. Tujuannya sederhana: konversi yang cepat, tanpa daftar akun, dan tanpa riwayat publik.</p>
+<p>zeConvert adalah layanan web untuk mengubah video menjadi musik (MP3) maupun menyimpan ulang video dalam format MP4 yang kompatibel di berbagai perangkat. Fokus kami adalah menyediakan alat yang ringan, jelas, bebas pendaftaran akun, dan mudah digunakan di ponsel maupun komputer.</p>
 <h2>Prinsip kami</h2>
-<ul><li><strong>Gratis dan sederhana.</strong> Tidak perlu akun.</li><li><strong>Privat.</strong> Hasil konversi hanya bisa diunduh oleh sesi browser yang membuatnya.</li><li><strong>Bersih.</strong> File sementara dihapus otomatis dari server.</li><li><strong>Bertanggung jawab.</strong> Gunakan hanya untuk file yang kamu miliki atau yang boleh kamu simpan.</li></ul>
+<ul><li><strong>Gratis dan sederhana.</strong> Langsung pakai dari browser tanpa perlu membuat akun atau memasang software tambahan.</li><li><strong>Privat.</strong> Tidak ada riwayat publik; akses hasil hanya berlaku untuk sesi browser yang memprosesnya.</li><li><strong>Bersih.</strong> Berkas sementara dibersihkan secara berkala dari server agar penyimpanan tetap terjaga.</li><li><strong>Edukasi pengguna.</strong> Selain alat konversi, kami menyediakan <a href="/panduan-konversi">panduan konversi</a> dan <a href="/panduan-bitrate-mp3">panduan kualitas audio/video</a> agar pengguna memilih format yang tepat.</li><li><strong>Bertanggung jawab.</strong> Gunakan hanya untuk konten yang kamu miliki atau yang boleh kamu simpan sesuai ketentuan hak cipta.</li></ul>
 <h2>Didukung iklan</h2>
-<p>Layanan ini dibiayai oleh iklan yang ditampilkan Google AdSense, sehingga tetap gratis bagi pengguna.</p>"""),
+<p>Operasional server layanan ini didukung oleh iklan Google AdSense agar tetap dapat diakses secara gratis oleh pengunjung.</p>"""),
     "kebijakan-privasi": ("Kebijakan Privasi — zeConvert", "Kebijakan privasi zeConvert: data apa yang diproses, cookie, iklan, dan penghapusan file.", """
 <h1>Kebijakan Privasi</h1>
 <p>Terakhir diperbarui: 1 November 2026. Kebijakan ini menjelaskan bagaimana zeConvert (zeconvert.cloud) menangani data saat kamu memakai layanan ini.</p>
@@ -78,8 +111,14 @@ STATIC_PAGES = {
 <p>Penanganan data dijelaskan di <a href="/kebijakan-privasi">Kebijakan Privasi</a>.</p>"""),
 }
 
-FOOTER_NAV = ('<nav class="foot-nav"><a href="/tentang">Tentang</a><a href="/kebijakan-privasi">Kebijakan Privasi</a>'
-              '<a href="/syarat-layanan">Syarat Layanan</a><a href="/mp4-ke-mp3">MP4 ke MP3</a><a href="/video-ke-musik">Video ke Musik</a></nav>')
+LEGAL_SLUGS = {"kebijakan-privasi", "syarat-layanan"}
+ADSENSE_SCRIPT = '<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6898176272342462" crossorigin="anonymous"></script>'
+
+FOOTER_NAV = ('<nav class="foot-nav"><a href="/">Beranda</a><a href="/panduan-konversi">Panduan Konversi</a>'
+              '<a href="/panduan-bitrate-mp3">Panduan Bitrate</a><a href="/faq">FAQ</a>'
+              '<a href="/mp4-ke-mp3">MP4 ke MP3</a><a href="/video-ke-musik">Video ke Musik</a>'
+              '<a href="/tentang">Tentang</a><a href="/kebijakan-privasi">Kebijakan Privasi</a>'
+              '<a href="/syarat-layanan">Syarat Layanan</a></nav>')
 
 LOGO = ('<svg viewBox="0 0 40 40" fill="none" aria-hidden="true">'
         '<defs><linearGradient id="zc-grad" x1="6" y1="6" x2="34" y2="34" gradientUnits="userSpaceOnUse">'
@@ -95,8 +134,8 @@ STATIC_TEMPLATE = """<!doctype html>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27 fill=%27none%27%3E%3Crect x=%271.5%27 y=%271.5%27 width=%2737%27 height=%2737%27 rx=%2710%27 fill=%27%230b1120%27 stroke=%27%2338bdf8%27 stroke-width=%271.5%27/%3E%3Cpath d=%27M10.5 14l6.5 6-6.5 6%27 stroke=%27%2338bdf8%27 stroke-width=%272.6%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M20.5 15h9m0 0l-3.2-3.2M29.5 15l-3.2 3.2%27 stroke=%27%2334d399%27 stroke-width=%272.4%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27/%3E%3Cpath d=%27M20 26.5h9.5%27 stroke=%27%2334d399%27 stroke-width=%272.6%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
 <meta name="google-adsense-account" content="ca-pub-6898176272342462">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6898176272342462" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="/static/style.css?v=20"></head>
+{ad_script}
+<link rel="stylesheet" href="/static/style.css?v=21"></head>
 <body><div class="page"><header class="topbar"><a class="brand" href="/">{logo}<span>ze<b>Convert</b></span></a></header>
 <main class="card prose">{body}</main><footer>{nav}<p>Gunakan hanya untuk konten yang kamu miliki atau boleh kamu simpan.</p></footer></div></body></html>"""
 
@@ -119,8 +158,9 @@ def render_static(slug: str) -> str | None:
     if page is None:
         return None
     title, description, body = page
+    ad_script = "" if slug in LEGAL_SLUGS else ADSENSE_SCRIPT
     return STATIC_TEMPLATE.format(title=html.escape(title), description=html.escape(description, quote=True), canonical=f"{SITE_URL}/{slug}",
-                                  logo=LOGO, body=body, nav=FOOTER_NAV)
+                                  logo=LOGO, body=body, nav=FOOTER_NAV, ad_script=ad_script)
 
 
 def sitemap() -> str:
